@@ -18,8 +18,7 @@ const Login = () => {
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState(false);
   const BASE_URL = process.env.REACT_APP_BASE_URL;
-  const admin = process.env.REACT_APP_ADMIN_USERNAME;
-  const pass = process.env.REACT_APP_ADMIN_PASSWORD;
+ 
   const collectData = async () => {
     // console.log(email, password);
     let result = await fetch(`${BASE_URL}/login`, {
