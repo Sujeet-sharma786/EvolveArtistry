@@ -47,6 +47,7 @@ app.post("/signupcheck", async (req, resp) => {
 app.post("/login", async (req, resp) => {
   if (req.body.password && req.body.email) {
     let admin = await AdminModel.findOne(req.body).select("-password");
+    console.log(admin);
     let User = await userModel.findOne(req.body).select("-password");
     if(admin){
         Jwt.sign({admin},Jwtkey,{expiresIn:"2h"},(err,token)=>{

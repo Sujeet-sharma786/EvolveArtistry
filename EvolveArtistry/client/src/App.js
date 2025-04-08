@@ -22,12 +22,23 @@ import Sidebar from "./Components/SideBar";
 import PrivateRoute1 from "./pages/privatecomp2";
 
 
-import  {ThemeProvider}  from "@material-ui/core";
+import  {ThemeProvider,createTheme}  from "@mui/material";
+
 // const auth = localStorage.getItem("user3");
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#dc004e',
+    },
+  },
+});
 function App() {
   return (
     <div className="App">
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <Router>
           <Sidebar>
             <Routes>
